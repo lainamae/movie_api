@@ -23,62 +23,101 @@
       span.s1 {
         font-kerning: none;
       }
+      /* body {
+        width: 90%; margin: 75px auto;
+      } */
+      table {
+        margin: 20px auto;
+        padding: 10px;
+        border: solid 1px black;
+      }
     </style>
   </head>
-  <body style="width: 60%; margin: 75px auto">
+  <body>
     <h1>myFlix API</h1>
     <p class="p1"><span class="s1">A REST API for an application called “myFlix” that interacts with a database that stores data about different movies.</span></p>
     <p class="p2"><span class="s1"></span><br /></p>
     <p class="p1"><span class="s1">A server-side component of a “movies” web application. The web application will provide users with access to information about different movies, directors, and genres. Users will be able to sign up, update their personal information, and create a list of their favorite movies.</span></p>
-    <table style="margin: 20px auto; padding: 10px; border: solid 1px black">
+    <table>
       <tr>
-        <th>Endpoint</th>
-        <th>Method</th>
-        <th>Operation</th>
+        <th>Request</th>
+        <th>URL</th>
+        <th>HTTP Method</th>
+        <th>Request body data format</th>
+        <th>Response body data format</th>
       </tr>
+
       <tr>
+        <td>Get a list of all movies</td>
         <td><code>/movies</code></td>
         <td><code>GET</code></td>
-        <td>Return a list of ALL movies to the user</td>
+        <td>None</td>
+        <td>A JSON object holding data about all the movies</td>
       </tr>
+
       <tr>
+        <td>Get data (description, genre, director, image URL, whether it’s featured or not) about a single movie by title</td>
         <td><code>/movies/[ID]</code></td>
         <td><code>GET</code></td>
-        <td>Return data (description, genre, director, image URL, whether it’s featured or not) about a single movie by title to the user</td>
+        <td>None</td>
+        <td>A JSON object holding data about a single movie</td>
       </tr>
+
       <tr>
+        <td>Return data about a genre (description) by name/title (e.g., “Thriller”)</td>
         <td><code>/movies/genre/[genre]</code></td>
         <td><code>GET</code></td>
-        <td>Return data about a genre (description) by name/title (e.g., “Thriller”)</td>
+        <td>None</td>
+        <td>A JSON object holding data about a genre</td>
       </tr>
+
       <tr>
+        <td>Return data about a director (bio, birth year, death year) by name</td>
         <td><code>/movies/directors/[director]</code></td>
         <td><code>GET</code></td>
-        <td>Return data about a director (bio, birth year, death year) by name</td>
+        <td>None</td>
+        <td>A JSON object holding data about a single director</td>
       </tr>
+
       <tr>
-        <td><code>/user</code></td>
+        <td>Add new user</td>
+        <td><code>/users</code></td>
         <td><code>POST</code></td>
-        <td>Allow new users to register</td>
+        <td>A JSON object holding data about the student to add, structured like:</br>
+        {name: "Laina Marciano", username: "lmmarciano", password:"encrypted"}</td>
+        <td>A JSON object holding data about the student that was added, including an ID:</br>
+        {id: 5, name: "Laina Marciano", username: "lmmarciano", password:"encrypted"}</td>
       </tr>
+
       <tr>
-        <td><code>/user[ID]/info</code></td>
+        <td>Update user info (username)</td>
+        <td><code>/users/[ID]/info</code></td>
         <td><code>PUT</code></td>
-        <td>Allow users to update their user info (username)</td>
+        <td>None</td>
+        <td>A text message indicating user's info was updated</td>
       </tr>
+
       <tr>
-        <td><code>/user[ID]/favorites</code></td>
+        <td>Add movie to a user's favorites</td>
+        <td><code>/users/[ID]/favorites</code></td>
         <td><code>PUT</code></td>
-        <td>Allow users to add a movie to their list of favorites (showing only a text that a movie has been added—more on this later)</td>
+        <td>None</td>
+        <td>A text message that the movie was added to the user's favorites.</td>
       </tr>
+
       <tr>
-        <td><code>/user[ID]/favorites/remove</code></td>
+        <td>Remove a movie by ID</td>
+        <td><code>/users/[ID]/favorites</code></td>
         <td><code>DELETE</code></td>
-        <td>Allow users to remove a movie from their list of favorites (showing only a text that a movie has been removed—more on this later)</td>
+        <td>None</td>
+        <td>A text message that a movie has been removed from favorites</td>
       </tr>
+
       <tr>
-        <td><code>/user[ID]/deactivate</code></td>
+        <td>request</td>
+        <td><code>/users/[ID]/deactivate</code></td>
         <td><code>DELETE</code></td>
+        <td>None</td>
         <td>Allow existing users to deregister (showing only a text that a user email has been removed—more on this later)</td>
       </tr>
     </table>
