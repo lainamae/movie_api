@@ -91,32 +91,19 @@ app.get('/movies', (req, res) => {
 // get data about a single movie by title
 
 app.get('/movies/:title', (req, res) => {
-  res.json(
-    movies.find((movie) => {
-      return movie.title === req.params.title;
-    })
-  );
-  res.send('Successful GET request returning data on' + title + '.');
+  res.send('Successful GET request returning data on movie by title.');
 });
 
 // return data about a genre by name/title
 
 app.get('/movies/genres/:genre', (req, res) => {
-  res.json(
-    genres.find((genre) => {
-      return genres.genre === req.params.genre;
-    })
-  );
+  res.send('Successful GET request returning data on a single genre');
 });
 
 // return data about a director by name
 
 app.get('/movies/directors/:director', (req, res) => {
-  res.json(
-    directors.find((director) => {
-      return directors.director === req.params.director;
-    })
-  );
+  res.send('Successful GET request returning data on a single director');
 });
 
 // add a new user
@@ -132,23 +119,33 @@ app.post('/users', (req, res) => {
     users.push(newUser);
     res.status(201).send(newUser);
   }
+
+  res.send('Successful POST request adding new user.');
 });
 
 // update user info (username)
 
-app.put('/users/:ID/info', (req, res) => {});
+app.put('/users/:ID/info', (req, res) => {
+  res.send('Successful PUT request returning data on user info');
+});
 
 // add movie to a user's favorites
 
-app.put('/users/:ID/favorites', (req, res) => {});
+app.put('/users/:ID/favorites', (req, res) => {
+  res.send('Successful PUT request returning data on user favorites');
+});
 
 // remove a movie by ID
 
-app.delete('/users/:ID/favorites', (req, res) => {});
+app.delete('/users/:ID/favorites', (req, res) => {
+  res.send('Successful DELETE request removing data from user favorites');
+});
 
 // allow users to deregister
 
-app.delete('/users/:ID/deactivate', (req, res) => {});
+app.delete('/users/:ID/deactivate', (req, res) => {
+  res.send('Successful DELETE request removing user');
+});
 
 // status & error
 
