@@ -57,7 +57,7 @@
 
       <tr>
         <td>Get data (description, genre, director, image URL, whether it’s featured or not) about a single movie by title</td>
-        <td><code>/movies/[ID]</code></td>
+        <td><code>/movies/[title]</code></td>
         <td><code>GET</code></td>
         <td>None</td>
         <td>A JSON object holding data about a single movie</td>
@@ -65,7 +65,7 @@
 
       <tr>
         <td>Return data about a genre (description) by name/title (e.g., “Thriller”)</td>
-        <td><code>/movies/genres/[genre]</code></td>
+        <td><code>/genres/[genre]</code></td>
         <td><code>GET</code></td>
         <td>None</td>
         <td>A JSON object holding data about a genre</td>
@@ -73,7 +73,7 @@
 
       <tr>
         <td>Return data about a director (bio, birth year, death year) by name</td>
-        <td><code>/movies/directors/[director]</code></td>
+        <td><code>/directors/[director]</code></td>
         <td><code>GET</code></td>
         <td>None</td>
         <td>A JSON object holding data about a single director</td>
@@ -84,14 +84,27 @@
         <td><code>/users</code></td>
         <td><code>POST</code></td>
         <td>A JSON object holding data about the student to add, structured like:</br>
-        {name: "Laina Marciano", username: "lmmarciano", password:"encrypted"}</td>
+          { 
+            "Username" : "testuser123",
+            "Password" : "testpassword300",
+            "Email" : "tester@gmail.com",
+            "Birthday" : "09/23/20"
+        }</td>
         <td>A JSON object holding data about the student that was added, including an ID:</br>
-        {id: 5, name: "Laina Marciano", username: "lmmarciano", password:"encrypted"}</td>
+          {
+            "Username": "testuser123",
+            "Password": "testpassword300",
+            "Email": "tester@gmail.com",
+            "Birthday": "2020-09-23T04:00:00.000Z",
+            "FavoriteMovies": [],
+            "_id": "612ebe20613acdb3eb84faee",
+            "__v": 0
+        }</td>
       </tr>
 
       <tr>
         <td>Update user info (username)</td>
-        <td><code>/users/[ID]/info</code></td>
+        <td><code>/users/[username]</code></td>
         <td><code>PUT</code></td>
         <td>None</td>
         <td>A text message indicating user's info was updated</td>
@@ -99,15 +112,15 @@
 
       <tr>
         <td>Add movie to a user's favorites</td>
-        <td><code>/users/[ID]/favorites</code></td>
-        <td><code>PUT</code></td>
+        <td><code>/users/[username]/movies/[movieID]</code></td>
+        <td><code>POST</code></td>
         <td>None</td>
         <td>A text message that the movie was added to the user's favorites.</td>
       </tr>
 
       <tr>
         <td>Remove a movie by ID</td>
-        <td><code>/users/[ID]/favorites</code></td>
+        <td><code>/users/[username]/movies/[movieID]</code></td>
         <td><code>DELETE</code></td>
         <td>None</td>
         <td>A text message that a movie has been removed from favorites</td>
@@ -115,7 +128,7 @@
 
       <tr>
         <td>Allow users to deregister</td>
-        <td><code>/users/[ID]/deactivate</code></td>
+        <td><code>/users/[username]</code></td>
         <td><code>DELETE</code></td>
         <td>None</td>
         <td>A text that a user email has been removed</td>
