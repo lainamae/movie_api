@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 const Models = require('./models.js');
-
-// const Movies = Models.Movie;
+const express = require('express'),
+  morgan = require('morgan'),
+  bodyParser = require('body-parser'),
+  methodOverride = require('method-override');
+const app = express();
+let auth = require('./auth')(app);
+const passport = require('passport');
+require('./passport');
 
 const Users = Models.User;
 const Movies = Models.Movie;
@@ -10,22 +16,10 @@ const Directors = Models.Director;
 
 mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
-const express = require('express'),
-  morgan = require('morgan'),
-  bodyParser = require('body-parser'),
-  methodOverride = require('method-override');
-
-const app = express();
-
 app.use(morgan('common'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride());
-
-let auth = require('./auth')(app);
-
-const passport = require('passport');
-require('./passport');
 
 // GET requests
 app.get('/', (req, res) => {
