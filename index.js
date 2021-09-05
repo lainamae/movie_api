@@ -10,6 +10,8 @@ let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
 let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+const bcrypt = require('bcrypt');
+const { check, validationResult } = require('express-validator');
 
 const Users = Models.User;
 const Movies = Models.Movie;
@@ -100,7 +102,14 @@ app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (r
 // USERS
 
 // USERS - POST NEW USER
-app.post('/users', (req, res) => {
+app.post('/users', [check('Username', 'Username is required').isLength({ min: 5 }), check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(), check('Password', 'Password is required').not().isEmpty(), check('Email', 'Email does not appear to be valid').isEmail()], (req, res) => {
+  let errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+
+  let hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Username: req.body.Username })
     .then((user) => {
       if (user) {
@@ -108,7 +117,7 @@ app.post('/users', (req, res) => {
       } else {
         Users.create({
           Username: req.body.Username,
-          Password: req.body.Password,
+          Password: hashedPassword,
           Email: req.body.Email,
           Birthday: req.body.Birthday,
         })
