@@ -5,9 +5,11 @@ const express = require('express'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override');
 const app = express();
+const cors = require('cors');
 let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
 
 const Users = Models.User;
 const Movies = Models.Movie;
@@ -16,10 +18,23 @@ const Directors = Models.Director;
 
 mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
+// Middleware
 app.use(morgan('common'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride());
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        let message = "The CORS policy for this application doesn't allow access from origin" + origin;
+        return callback(new Error(message), false);
+      }
+      return callback(null, true);
+    },
+  })
+);
 
 // GET requests
 app.get('/', (req, res) => {
