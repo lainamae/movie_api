@@ -9,8 +9,8 @@ const cors = require('cors');
 let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
-const bcrypt = require('bcrypt');
+let allowedOrigins = ['http://localhost:8080', 'https://myflix-0501.herokuapp.com/', CONNECTION_URI];
+
 const { check, validationResult } = require('express-validator');
 
 const Users = Models.User;
@@ -18,7 +18,7 @@ const Movies = Models.Movie;
 const Genres = Models.Genre;
 const Directors = Models.Director;
 
-mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Middleware
 app.use(morgan('common'));
