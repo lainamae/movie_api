@@ -9,7 +9,7 @@ const cors = require('cors');
 let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
-let allowedOrigins = ['http://localhost:8080', 'https://myflix-0501.herokuapp.com/', CONNECTION_URI];
+let allowedOrigins = ['http://localhost:8080', 'https://myflix-0501.herokuapp.com/';
 
 const { check, validationResult } = require('express-validator');
 
