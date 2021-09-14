@@ -6,7 +6,7 @@ const express = require('express'),
   methodOverride = require('method-override');
 const app = express();
 const cors = require('cors');
-let auth = require('./auth')(app);
+const config = require('./config');
 const passport = require('passport');
 require('./passport');
 let allowedOrigins = ['http://localhost:8080', 'https://myflix-0501.herokuapp.com/'];
@@ -18,7 +18,7 @@ const Movies = Models.Movie;
 const Genres = Models.Genre;
 const Directors = Models.Director;
 
-mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(config.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Middleware
 app.use(morgan('common'));
@@ -37,6 +37,8 @@ app.use(
     },
   })
 );
+
+let auth = require('./auth')(app);
 
 // GET requests
 app.get('/', (req, res) => {
