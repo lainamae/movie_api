@@ -14,7 +14,7 @@
       "$oid": "6122de51a1f290c8be2ba279"
     }
   },
-  "ImagePath": "sorcerersstone.png",
+  "ImagePath": "https://static.wikia.nocookie.net/harrypotter/images/f/fb/PS_poster.jpg/revision/latest?cb=20180318153750",
   "Featured": true
 }
 {
@@ -33,7 +33,7 @@
       "$oid": "6122de51a1f290c8be2ba279"
     }
   },
-  "ImagePath": "chamberofsecrets.png",
+  "ImagePath": "https://m.media-amazon.com/images/M/MV5BMTcxODgwMDkxNV5BMl5BanBnXkFtZTYwMDk2MDg3._V1_FMjpg_UX1000_.jpg",
   "Featured": true
 }
 {
@@ -71,7 +71,7 @@
       "$oid": "6122dee1a1f290c8be2ba27b"
     }
   },
-  "ImagePath": "kikisdeliveryservice.png",
+  "ImagePath": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fghibli.fandom.com%2Fwiki%2FKiki%2527s_Delivery_Service&psig=AOvVaw1XYSdqR09B_Bwr9Uiixzw1&ust=1634488613598000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPDPqcuuz_MCFQAAAAAdAAAAABAJ",
   "featured": true
 }
 {
@@ -90,7 +90,7 @@
       "$oid": "6122dee1a1f290c8be2ba27b"
     }
   },
-  "ImagePath": "frozenII.png",
+  "ImagePath": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Frozen_2_poster.jpg/220px-Frozen_2_poster.jpg",
   "featured": true
 }
 {
@@ -109,7 +109,7 @@
       "$oid": "6122dee1a1f290c8be2ba27b"
     }
   },
-  "ImagePath": "unexpectedjourney.png",
+  "ImagePath": "https://upload.wikimedia.org/wikipedia/en/b/b3/The_Hobbit-_An_Unexpected_Journey.jpeg",
   "featured": true
 }
 {
@@ -128,7 +128,7 @@
       "$oid": "6122dee1a1f290c8be2ba27b"
     }
   },
-  "ImagePath": "./images/maleficent.png",
+  "ImagePath": "https://m.media-amazon.com/images/M/MV5BMjAwMzAzMzExOF5BMl5BanBnXkFtZTgwOTcwMDA5MTE@._V1_FMjpg_UX1000_.jpg",
   "featured": true
 }
 {
@@ -147,7 +147,7 @@
       "$oid": "6122dee1a1f290c8be2ba27b"
     }
   },
-  "ImagePath": "fellowshipoftherings.png",
+  "ImagePath": "https://m.media-amazon.com/images/I/71sLg08monL._SL1073_.jpg",
   "featured": true
 }
 {
@@ -166,7 +166,7 @@
       "$oid": "6122de51a1f290c8be2ba279"
     }
   },
-  "ImagePath": "nightmarebeforechristmas.png",
+  "ImagePath": "https://m.media-amazon.com/images/I/814aBgWGgQL._AC_UY436_FMwebp_QL65_.jpg",
   "featured": true
 }
 {
@@ -185,6 +185,6 @@
       "$oid": "6122dee1a1f290c8be2ba27b"
     }
   },
-  "ImagePath": "hungergames.png",
+  "ImagePath": "https://m.media-amazon.com/images/I/91h6+0A0VSL._AC_UY436_FMwebp_QL65_.jpg",
   "featured": true
 }
