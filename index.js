@@ -51,8 +51,17 @@ app.get('static/documentation.html', (req, res) => {});
 
 // get a list of all movies
 
+// 
+// const films = require('./db/films.json')
+// app.get('/films', (req,res) => {
+
+//   // Movies.remove({})
+//   Movies.insertMany(films)
+//   .then(movies => res.status(201).json(movies))
+// })
+
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Movies.find()
+  Movies.find().populate('Genre').populate('Director')
     .then((movies) => {
       res.status(201).json(movies);
     })

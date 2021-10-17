@@ -1,0 +1,92 @@
+[
+  {
+    "Actors": [],
+    "Title": "Harry Potter and the Sorcerer's Stone",
+    "Description": "An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.",
+    "Director": "6122df8ea1f290c8be2ba27c",
+    "Genre": "6122de51a1f290c8be2ba279",
+    "ImagePath": "sorcerersstone.png",
+    "Featured": true
+  },
+  {
+    "Actors": [],
+    "Title": "Harry Potter and the Chamber of Secrets",
+    "Description": "An ancient prophecy seems to be coming true when a mysterious presence begins stalking the corridors of a school of magic and leaving its victims paralyzed.",
+    "Director": "6122df8ea1f290c8be2ba27c",
+    "Genre": "6122deb2a1f290c8be2ba27a",
+    "ImagePath": "chamberofsecrets.png",
+    "Featured": true
+  },
+  {
+    "Actors": [],
+    "Title": "Howl's Moving Castle",
+    "Description": "When an unconfident young woman is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking castle.",
+    "Director": "6122e00aa1f290c8be2ba27d",
+    "Genre": "6122de51a1f290c8be2ba279",
+    "ImagePath": "howlsmovingcastle.png",
+    "featured": true
+  },
+  {
+    "Actors": [],
+    "Title": "Kiki's Delivery Service",
+    "Description": "A young witch, on her mandatory year of independent life, finds fitting into a new community difficult while she supports herself by running an air courier service.",
+    "Director": "6122e00aa1f290c8be2ba27d",
+    "Genre": "6122de51a1f290c8be2ba279",
+    "ImagePath": "kikisdeliveryservice.png",
+    "featured": true
+  },
+  {
+    "Actors": [],
+    "Title": "Frozen II",
+    "Description": "In the sequel to Disney's Frozen, Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to an ancient, autumn-bound forest of an enchanted land. They set out to find the origin of Elsa's powers in order to save their kingdom.",
+    "Director": "6122e140a1f290c8be2ba27e",
+    "Genre": "6122deb2a1f290c8be2ba27a",
+    "ImagePath": "frozenII.png",
+    "featured": true
+  },
+  {
+    "Actors": [],
+    "Title": "The Hobbit: An Unexpected Journey",
+    "Description": "A reluctant Hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home, and the gold within it from the dragon Smaug.",
+    "Director": "6122e210a1f290c8be2ba280",
+    "Genre": "6122dee1a1f290c8be2ba27b",
+    "ImagePath": "unexpectedjourney.png",
+    "featured": true
+  },
+  {
+    "Actors": [],
+    "Title": "Maleficent",
+    "Description": "A vengeful fairy is driven to curse an infant princess, only to discover that the child may be the one person who can restore peace to their troubled land.",
+    "Director": "6122e184a1f290c8be2ba27f",
+    "Genre": "6122dee1a1f290c8be2ba27b",
+    "ImagePath": "maleficent.png",
+    "featured": true
+  },
+  {
+    "Actors": [],
+    "Title": "Lord of the Rings: Fellowship of the Ring",
+    "Description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+    "Director": "6122e210a1f290c8be2ba280",
+    "Genre": "6122dee1a1f290c8be2ba27b",
+    "ImagePath": "fellowshipoftherings.png",
+    "featured": true
+  },
+  {
+    "Actors": [],
+    "Title": "The Nightmare Before Christmas",
+    "Description": "Jack Skellington, king of Halloween Town, discovers Christmas Town, but his attempts to bring Christmas to his home causes confusion.",
+    "Director": "6122e2bfa1f290c8be2ba282",
+    "Genre": "6122de51a1f290c8be2ba279",
+    "ImagePath": "nightmarebeforechristmas.png",
+    "featured": true
+  },
+  {
+    "Actors": [],
+    "Title": "The Hunger Games",
+    "Description": "Katniss Everdeen voluntarily takes her younger sister's place in the Hunger Games: a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death.",
+    "Director": "6122e2f5a1f290c8be2ba283",
+    "Genre": "6122dee1a1f290c8be2ba27b",
+    "ImagePath": "hungergames.png",
+    "featured": true
+  }
+]

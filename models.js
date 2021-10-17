@@ -4,14 +4,8 @@ const bcrypt = require('bcrypt');
 let movieSchema = mongoose.Schema({
   Title: { type: String, required: true },
   Description: { type: String, required: true },
-  Genre: {
-    Name: String,
-    Description: String,
-  },
-  Director: {
-    Name: String,
-    Bio: String,
-  },
+  Genre: { type: mongoose.Schema.Types.ObjectId, ref: 'Genre' },
+  Director: { type: mongoose.Schema.Types.ObjectId, ref: 'Director' },
   Actors: [String],
   ImagePath: String,
   Featured: Boolean,
@@ -22,7 +16,7 @@ let userSchema = mongoose.Schema({
   Password: { type: String, required: true },
   Email: { type: String, required: true },
   Birthday: Date,
-  FavoriteMovies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movie' }],
+  FavoriteMovies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Film' }],
 });
 
 userSchema.statics.hashPassword = (password) => {
@@ -45,7 +39,8 @@ let directorSchema = mongoose.Schema({
   Death: String,
 });
 
-let Movie = mongoose.model('Movie', movieSchema);
+// let Movie = mongoose.model('Movie', movieSchema);
+let Movie = mongoose.model('Film', movieSchema);
 let User = mongoose.model('User', userSchema);
 let Genre = mongoose.model('Genre', genreSchema);
 let Director = mongoose.model('Director', directorSchema);
