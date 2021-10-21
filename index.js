@@ -9,7 +9,7 @@ const cors = require('cors');
 const config = require('./config');
 const passport = require('passport');
 require('./passport');
-let allowedOrigins = ['http://localhost:8080', 'https://myflix-0501.herokuapp.com/', 'http://localhost:1234', 'https://res.cloudinary.com/myflix-0501/..'];
+let allowedOrigins = ['http://localhost:8080', 'https://myflix-0501.herokuapp.com/', 'http://localhost:1234', 'https://res.cloudinary.com/myflix-0501/image/upload/v1634849563/mumford_philosphers_mnirmy.jpg', 'https://alternativemovieposters.com/wp-content/uploads/2018/01/mumford_chamber.jpg','https://res.cloudinary.com/myflix-0501/image/upload/..' ];
 
 const { check, validationResult } = require('express-validator');
 
