@@ -5,11 +5,11 @@ const express = require('express'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override');
 const app = express();
-// const cors = require('cors');
+const cors = require('cors');
 const config = require('./config');
 const passport = require('passport');
 require('./passport');
-// let allowedOrigins = ['http://localhost:8080', 'https://myflix-0501.herokuapp.com/', 'http://localhost:1234', 'https://res.cloudinary.com/myflix-0501/image/upload/v1634849563/mumford_philosphers_mnirmy.jpg', 'https://alternativemovieposters.com/wp-content/uploads/2018/01/mumford_chamber.jpg','https://res.cloudinary.com/myflix-0501/image/upload/..' ];
+let allowedOrigins = ['http://localhost:8080', 'https://myflix-0501.herokuapp.com/', 'http://localhost:1234', 'https://res.cloudinary.com/myflix-0501/image/upload/v1634849563/mumford_philosphers_mnirmy.jpg', 'https://alternativemovieposters.com/wp-content/uploads/2018/01/mumford_chamber.jpg','https://res.cloudinary.com/myflix-0501/image/upload/..' ];
 
 const { check, validationResult } = require('express-validator');
 
@@ -25,18 +25,18 @@ app.use(morgan('common'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride());
-// app.use(
-//   cors({
-//     origin: (origin, callback) => {
-//       if (!origin) return callback(null, true);
-//       if (allowedOrigins.indexOf(origin) === -1) {
-//         let message = "The CORS policy for this application doesn't allow access from origin" + origin;
-//         return callback(new Error(message), false);
-//       }
-//       return callback(null, true);
-//     },
-//   })
-// );
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        let message = "The CORS policy for this application doesn't allow access from origin" + origin;
+        return callback(new Error(message), false);
+      }
+      return callback(null, true);
+    },
+  })
+);
 
 let auth = require('./auth')(app);
 
