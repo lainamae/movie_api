@@ -9,7 +9,7 @@ const cors = require('cors');
 const config = require('./config');
 const passport = require('passport');
 require('./passport');
-let allowedOrigins = ['http://localhost:8080', 'https://myflix-0501.herokuapp.com/', 'http://localhost:1234', 'https://res.cloudinary.com/myflix-0501/image/upload/..' ];
+let allowedOrigins = ['http://localhost:8080', 'https://myflix-0501.herokuapp.com/', 'http://localhost:1234', 'https://res.cloudinary.com/myflix-0501/image/upload/..' ,'https://alternativemovieposters.com/wp-content/uploads/..'];
 
 const { check, validationResult } = require('express-validator');
 
