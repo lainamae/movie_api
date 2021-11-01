@@ -149,7 +149,7 @@ app.post('/users', [check('Username', 'Username is required').isLength({ min: 5 
 
 // USERS - GET by USERNAME
 app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Users.findOne({ Username: req.params.Username })
+  Users.findOne({ Username: req.params.Username }).populate('FavoriteMovies')
     .then((user) => {
       res.json(user);
     })
